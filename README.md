@@ -1,0 +1,18 @@
+# Parcel
+- Dev Build 
+- Local Server
+- HMR (Hot Module Replacement)
+- File watching algorithm - Written in C++
+- Caching - Faster Builds
+- Image Optimization
+- Minification 
+- Buldling 
+- Compress our file
+- Consistent Hashing
+- Code Splitting
+- Differential bundling - support older browsers
+- Diagnostic 
+- Error Handling
+- Host out app in HTTPS
+- Tree Shaking - Remove Unused For us
+- different dev and production bundles
