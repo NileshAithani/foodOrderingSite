@@ -16,3 +16,27 @@
 - Host out app in HTTPS
 - Tree Shaking - Remove Unused For us
 - different dev and production bundles
+
+
+
+
+#Food Ordering Application
+
+/*
+*Header
+* -Logo
+* -NavItem
+*Body
+* -Search
+* -RestaurantContainer
+* -RestaurantCard 
+     1. Image
+     2.Name of res , Star Rating, cuisine , delivery time 
+
+*Footer
+* -CopyRight
+* -Links
+* -Address
+* -Contact 
+
+*/
