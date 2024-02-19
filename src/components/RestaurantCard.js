@@ -4,7 +4,7 @@ const RestaurantCard = (props) => {
     // console.log(props);
     const { resData } = props;
   
-    const { name, cuisines, avgRating, costForTwo, cloudinaryImageId , sla} = resData;
+    const { name, cuisines, avgRating, costForTwo, cloudinaryImageId , sla} = resData?.info;
     return (
       <div className="res-card">
         <img

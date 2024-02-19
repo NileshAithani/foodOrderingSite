@@ -4,22 +4,23 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 
 const Body = () => {
-  // const fetchData = async () => {
-  //   const data = await fetch("https://firesingh.github.io/api/Swiggy.json");
-  //   const json = await data.json();
-  //   let myResData =
-  //     json.data.success.cards[4].gridWidget.gridElements.infoWithStyle
-  //       .restaurants;
-  //   console.log(myResData[0].info);
-  // };
+  const [listOfData, setlistOfData] = useState([]);
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  const [listOfData, setlistOfData] = useState(resList);
+  const fetchData = async () => {
+    const data = await fetch("https://firesingh.github.io/api/Swiggy.json");
+    // const data1 = await fetch("https://www.swiggy.com/api/seo/getListing?lat=28.67003492726483&lng=77.11469986756225");
 
-  // const [originalListData, setoriginalListData] = useState(resList);
+    const json = await data.json();
+
+    const myResData =
+      json.data.success.cards[4].gridWidget.gridElements.infoWithStyle
+        .restaurants;
+    setlistOfData(myResData);
+  };
 
   return (
     <div className="body">
@@ -27,7 +28,7 @@ const Body = () => {
       <button
         className="filter-btn"
         onClick={() => {
-          const filteredList = listOfData.filter((res) => res.avgRating >= 4.5);
+          const filteredList = listOfData.filter((res) => res.info.avgRating >= 4.5);
           setlistOfData(filteredList);
         }}
       >
