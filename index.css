@@ -73,4 +73,12 @@
     padding: 10px;
 
 }
+.login-btn{
+    padding: 0 20px ;
+    cursor: pointer;
+}
+.Search-Bar{
+    display: flex;
+    
+}
 
