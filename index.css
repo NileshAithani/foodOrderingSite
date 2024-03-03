@@ -27,6 +27,10 @@
     /* margin: 10px; */
     
 }
+.Link{
+    color:white;
+    text-decoration: none; 
+}
 .SearchBar{
     padding:10px;
 
