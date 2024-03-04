@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 .header{
     display:flex;
     justify-content: space-around; 
@@ -29,6 +34,10 @@
 }
 .Link{
     color:white;
+    text-decoration: none; 
+}
+.CardLink{
+    color:black;
     text-decoration: none; 
 }
 .SearchBar{
@@ -85,4 +94,3 @@
     display: flex;
     
 }
-

@@ -3,6 +3,8 @@ import { resList } from "../config/mockData";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+
 
 const Body = () => {
   //Local State Variable - Most powerful variable
@@ -22,7 +24,7 @@ const Body = () => {
     const json = await data.json();
 
     const myResData =
-    //optional Chainning
+      //optional Chainning
       json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle
         ?.restaurants;
     setlistOfData(myResData);
@@ -33,9 +35,6 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-
-
-
       {/* --------Search Bar------------------ */}
       <div className="Search-Bar">
         <input
@@ -46,7 +45,6 @@ const Body = () => {
             setsearchText(e.target.value);
           }}
         />
-
 
         <button
           className="search-btn"
@@ -62,8 +60,6 @@ const Body = () => {
         </button>
       </div>
 
-
-
       {/* ------------Filte Button------------- */}
       <button
         className="filter-btn"
@@ -78,11 +74,14 @@ const Body = () => {
       </button>
       <div className="res-Container">
         {filterListOfData.map((restaurant) => (
-          <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
+          <Link className="CardLink"
+            to={"/restaurants/" + restaurant?.info?.id}
+            key={restaurant?.info?.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
-
-
     </div>
   );
 };
