@@ -94,3 +94,27 @@
     display: flex;
     
 }
+
+/* css for about page */
+.Wrapper{
+    margin: 0;
+    padding: 0;
+}
+.about-head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.about-body{
+    display: flex;
+    justify-content:center;
+    gap:50px
+   
+}
+.about-desc{
+    width: 300px;
+    height: 120px;
+
+}

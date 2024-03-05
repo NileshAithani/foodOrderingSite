@@ -1,22 +1,26 @@
+import my from "../Image/Nilesh.jpeg";
+import { Link } from "react-router-dom";
 const About = () => {
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-md">
-        <h1 className="text-3xl font-semibold mb-4">About Us</h1>
-        <p className="text-gray-700 mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-          fringilla, libero eu hendrerit semper, risus velit ultricies nisi,
-          eget ultrices enim lorem et libero.
-        </p>
-        <p className="text-green-700 mb-6">
-          Integer sed elit vel nunc scelerisque porta. Nulla facilisi. Proin
-          auctor accumsan enim, at tristique odio vehicula nec.
-        </p>
-        <p className="text-gray-700">
-          In sagittis, nunc ut tempus vestibulum, libero mauris fermentum
-          turpis, in dapibus libero velit vitae nunc. Nullam sit amet tincidunt
-          neque.
-        </p>
+    <div className="Wrapper">
+      <div className="about-head">
+        <h1>About Me</h1>
+        <h3>My Introduction</h3>
+      </div>
+      <div className="about-body">
+        <img src={my} alt="MyImage" />
+        <div className="about-desc">
+          Hey there,👋 I'm Nilesh a 24-year-old Post-undergrad who is passionate
+          about Software Development, UI/UX Design and Product Management.
+          Currently, I'm pursuing my career as a Full Stack Web Developer 👨🏻‍💻
+          with 1 years of professional and freelance experience. I share my
+          learnings through speaking engagements and write-ups. ✍🏻
+
+          <button>
+          <a href="https://drive.google.com/file/d/10P8yDp7h1ieHtDkGXZzxY0X1Bea3ZOKj/view?pli=1" download target="_blank" rel="noopener noreferrer">Resume</a>
+          </button>
+        </div>
+          
       </div>
     </div>
   );
