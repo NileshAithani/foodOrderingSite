@@ -1,0 +1,53 @@
+[33mcommit 876a41bc30c493b189a23e4eb572939959ab0b31[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: NileshAithani <Nileshaithani007@gmail.com>
+Date:   Tue Mar 5 12:16:06 2024 +0530
+
+    Update in About Page
+
+[33mcommit c17658f2ea42b6a4a0867c062535e2ca4dab14d2[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: NileshAithani <Nileshaithani007@gmail.com>
+Date:   Mon Mar 4 17:52:19 2024 +0530
+
+    Functionality of Restaurant Menu
+
+[33mcommit c6fe506e47b9df6b4e627aec9faa3c7e06630229[m
+Author: NileshAithani <Nileshaithani007@gmail.com>
+Date:   Mon Mar 4 00:08:19 2024 +0530
+
+    Routing added for NavBar
+
+[33mcommit 57198bf303fead4631b1c4e8fdff9f3a69edce1d[m
+Author: NileshAithani <Nileshaithani007@gmail.com>
+Date:   Fri Mar 1 11:10:26 2024 +0530
+
+    Search and Filter Button Functionality
+
+[33mcommit a8c14a5cb461c85477941624140417986876f08e[m
+Author: NileshAithani <Nileshaithani007@gmail.com>
+Date:   Mon Feb 19 18:25:27 2024 +0530
+
+    Add a Shimmer
+
+[33mcommit eaee09ff1a891ac073413b07edbbc242971178d7[m
+Author: NileshAithani <Nileshaithani007@gmail.com>
+Date:   Mon Feb 19 17:47:35 2024 +0530
+
+    Get the data from Swiggy API and Update the UI according to the Data
+
+[33mcommit 283999d8a4be168eb2553dc336fd66275ed242bd[m
+Author: NileshAithani <Nileshaithani007@gmail.com>
+Date:   Mon Feb 19 05:36:59 2024 +0530
+
+    Created res Container and apply the Filter Accourding to the avgRating
+
+[33mcommit 07d9226df1c7b1e8a38ed300ad6953c231057120[m
+Author: NileshAithani <Nileshaithani007@gmail.com>
+Date:   Fri Jan 12 17:38:07 2024 +0530
+
+    Day 3 - Laying the Foundation
+
+[33mcommit 74840a5bb6894c1ca7ac7a556eb5c8b2ab80e9f1[m
+Author: NileshAithani <Nileshaithani007@gmail.com>
+Date:   Wed Jan 10 16:47:46 2024 +0530
+
+    DAY 1

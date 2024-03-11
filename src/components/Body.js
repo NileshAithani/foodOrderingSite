@@ -35,6 +35,8 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
+
+
       {/* --------Search Bar------------------ */}
       <div className="Search-Bar">
         <input
@@ -87,3 +89,6 @@ const Body = () => {
 };
 
 export default Body;
+
+
+
