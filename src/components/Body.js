@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
+import useOnlineStatus from "../config/useOnlineStatus";
 
 const Body = () => {
   //Local State Variable - Most powerful variable
@@ -31,12 +31,14 @@ const Body = () => {
     setfilterListOfData(myResData);
   };
 
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false)
+    return (<h1>Looks like you're Offine, Check your Internet Connectivity</h1>);
+
   return listOfData === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
-
-
       {/* --------Search Bar------------------ */}
       <div className="Search-Bar">
         <input
@@ -76,7 +78,8 @@ const Body = () => {
       </button>
       <div className="res-Container">
         {filterListOfData.map((restaurant) => (
-          <Link className="CardLink"
+          <Link
+            className="CardLink"
             to={"/restaurants/" + restaurant?.info?.id}
             key={restaurant?.info?.id}
           >
@@ -89,6 +92,3 @@ const Body = () => {
 };
 
 export default Body;
-
-
-
