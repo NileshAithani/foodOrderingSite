@@ -41,6 +41,9 @@ const Header = () => {
           <li>
             <Link to={"/contact"} className="Link">Contact Us</Link>
           </li>
+          <li>
+            <Link to={"/grocery"} className="Link">Grocery</Link>
+          </li>
           {/* <li>Cart</li> */}
           <li>OnlineStatus : {onlineStatus?"🟢":"🔴"}</li>
 
