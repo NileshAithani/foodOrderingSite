@@ -13,7 +13,7 @@ const Grocery = lazy(() => import("./components/Grocery"));
 
 const Applayout = () => {
   return (
-    <div className="app">
+    <div className="max-w-screen-2xl flex flex-col gap-10">
       {/* Header */}
       <Header />
       {/* Body  */}

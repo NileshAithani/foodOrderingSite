@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard , {withPromotedLabel} from "./RestaurantCard";
 import { resList } from "../config/mockData";
 import React, { useEffect } from "react";
 import { useState } from "react";
@@ -6,7 +6,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../config/useOnlineStatus";
 
-const Body = () => {
+const Body = () => {    
   //Local State Variable - Most powerful variable
   const [listOfData, setlistOfData] = useState([]);
   const [filterListOfData, setfilterListOfData] = useState([]);
@@ -33,61 +33,105 @@ const Body = () => {
 
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false)
-    return (<h1>Looks like you're Offine, Check your Internet Connectivity</h1>);
+    return <h1>Looks like you're Offine, Check your Internet Connectivity</h1>;
+
+
+  const RestaurantPromotedCard = withPromotedLabel(RestaurantCard);
+
+
 
   return listOfData === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      {/* --------Search Bar------------------ */}
-      <div className="Search-Bar">
-        <input
-          placeholder="Search"
-          type="text"
-          value={searchText}
-          onInput={(e) => {
-            setsearchText(e.target.value);
-          }}
-        />
+    <section className="w-full">
 
-        <button
-          className="search-btn"
-          onClick={() => {
-            const filterRestaurantData = listOfData.filter((res) =>
-              res?.info?.name.toLowerCase().includes(searchText.toLowerCase())
-            );
 
-            setfilterListOfData(filterRestaurantData);
-          }}
-        >
-          Search
-        </button>
+
+      {/* Search Bar */}
+
+      <div  className="flex justify-center items-center gap-2 ">
+          <input
+           className="py-2 border rounded-md px-10"
+            placeholder="Search"
+            type="text"
+            value={searchText}
+            onInput={(e) => {
+              setsearchText(e.target.value);
+            }}
+
+
+            onKeyDown={ (e) => {
+              if(e.key==="Enter"){
+                const filterRestaurantData = listOfData.filter((res) =>
+                res?.info?.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setfilterListOfData(filterRestaurantData);}}
+              }
+          />
+
+
+
+
+        {/* Search Button */}
+        
+          <button
+            className="bg-blue-500 text-white p-2 rounded-md  "
+            onClick={() => {
+              const filterRestaurantData = listOfData.filter((res) =>
+                res?.info?.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+
+              setfilterListOfData(filterRestaurantData);
+            }}
+          >
+            Search
+          </button>
       </div>
 
-      {/* ------------Filte Button------------- */}
-      <button
-        className="filter-btn"
-        onClick={() => {
-          const filteredList = listOfData.filter(
-            (res) => res.info.avgRating >= 4.5
-          );
-          setfilterListOfData(filteredList);
-        }}
-      >
-        Top Rated RestaurantCard
-      </button>
-      <div className="res-Container">
+
+
+
+      {/* Filter Button */}
+      
+        <button
+          className="p-2 m-6 bg-blue-300 border rounded-md shadow-lg shadow-slate-400 font-semibold text-white hover:bg-blue-500"
+          onClick={() => {
+            const filteredList = listOfData.filter(
+              (res) => res.info.avgRating >= 4.5
+            );
+            setfilterListOfData(filteredList);
+          }}
+        >
+          Top Rated Restaurant Card
+        </button>
+      
+
+
+
+
+      {/* Restaurant Card */}
+      <div className="flex justify-center items-center">
+      <div className="grid grid-cols-3 gap-14  w-[1080px] ">
+
         {filterListOfData.map((restaurant) => (
           <Link
-            className="CardLink"
             to={"/restaurants/" + restaurant?.info?.id}
             key={restaurant?.info?.id}
           >
-            <RestaurantCard resData={restaurant} />
+
+          {
+            restaurant?.info?.promoted ? <RestaurantPromotedCard resData={restaurant} /> : <RestaurantCard resData={restaurant} />
+
+          }
+ 
           </Link>
+
         ))}
-      </div>
-    </div>
+</div>
+</div>
+
+
+    </section>
   );
 };
 

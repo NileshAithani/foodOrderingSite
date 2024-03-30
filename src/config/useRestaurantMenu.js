@@ -12,10 +12,14 @@ const useRestaurantMenu = (resId) => {
     const data = await fetch(MAIN_API + resId+".json");
     const json = await data.json();
 
-    setResInfo(json);
+    setResInfo(json.data);
+
   };
 
   return resInfo;
+
 };
+
+
 
 export default useRestaurantMenu;
