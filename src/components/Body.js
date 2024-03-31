@@ -1,10 +1,11 @@
 import RestaurantCard , {withPromotedLabel} from "./RestaurantCard";
 import { resList } from "../config/mockData";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../config/useOnlineStatus";
+import UserContext from "../config/UserContext";
 
 const Body = () => {    
   //Local State Variable - Most powerful variable
@@ -37,6 +38,11 @@ const Body = () => {
 
 
   const RestaurantPromotedCard = withPromotedLabel(RestaurantCard);
+
+   const {loggedInUser , setUsername} = useContext(UserContext);
+
+
+
 
 
 
@@ -104,6 +110,11 @@ const Body = () => {
         >
           Top Rated Restaurant Card
         </button>
+
+
+        {/* Username Change for checking the context API concept */}
+        <label>Username</label>
+        <input className="border border-black px-2 mx-2" value={loggedInUser} onChange={(event)=> setUsername(event.target.value)} />
       
 
 
@@ -121,14 +132,20 @@ const Body = () => {
 
           {
             restaurant?.info?.promoted ? <RestaurantPromotedCard resData={restaurant} /> : <RestaurantCard resData={restaurant} />
+            
 
           }
+          
  
           </Link>
 
         ))}
+
+        
 </div>
+
 </div>
+
 
 
     </section>

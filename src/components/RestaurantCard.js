@@ -1,5 +1,6 @@
+import UserContext from "../config/UserContext";
 import { CDN_URL } from "../config/constants";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -8,6 +9,8 @@ const RestaurantCard = (props) => {
   const [showMore, setShowMore] = useState(false);
 
   const truncatedCuisines = showMore ? cuisines : cuisines.slice(0, 2);
+
+  const username = useContext(UserContext);
 
   return (
     <div className="bg-white min-h-[437px] rounded-lg shadow-md p-4 mb-4 transition-transform duration-200 transform hover:scale-105 ">
@@ -40,6 +43,8 @@ const RestaurantCard = (props) => {
           <span className="text-gray-700">Delivery Time:</span>
           <span className="font-bold">{sla.deliveryTime} minutes</span>
         </div>
+
+        <div>{username.loggedInUser}</div>
       </div>
     </div>
   );

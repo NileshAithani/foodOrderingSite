@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState , useContext } from "react";
 // import { LOGO_URL } from "../config/constants";
 import companylogo from "../Image/CompanyLogo.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../config/useOnlineStatus";
+import UserContext from "../config/UserContext";
 
 const Header = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -11,9 +12,9 @@ const Header = () => {
   //   setIsLoggedIn((prevIsLoggedIn) => !prevIsLoggedIn);
   // };
 
-  useEffect(() => {
-    console.log("UseEffect");
-  });
+  // useEffect(() => {
+  //   console.log("UseEffect");
+  // });
 
   const [buttonName, setButtonName] = useState("Login");
 
@@ -25,7 +26,11 @@ const Header = () => {
     }
   };
   const onlineStatus = useOnlineStatus();
-  console.log(onlineStatus);
+  // console.log(onlineStatus);
+
+  const {loggedInUser} = useContext(UserContext);
+  // console.log(data);
+
   return (
     <nav className="flex justify-evenly w-full p-3 text-lg shadow-lg rounded-md">
       {/* Logo of Company */}
@@ -58,13 +63,20 @@ const Header = () => {
           </Link>
         </li>
         <li className="text-gray-700 hover:text-gray-950">OnlineStatus : {onlineStatus ? "🟢" : "🔴"}</li>
+
+        <li> Welcome, {loggedInUser}</li>
       </ul>
 
       <div className="flex justify-center items-center">
         <button className="w-10 font-mullish font-bold text-gray-700  px-5 text-center transition-all duration-200  hover:text-gray-950  " onClick={ButtonNameHandler}>
           {buttonName}
         </button>
+        
       </div>
+
+      
+
+      
     </nav>
   );
 };
