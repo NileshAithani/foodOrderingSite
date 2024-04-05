@@ -1,8 +1,25 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../config/constants";
+import { addItems } from "../config/cartSlice";
+import { useState } from "react";
+
+
 
 
 const ItemList = ({ items }) => {
+
   console.log(items);
+
+
+// items.
+ const dispatch = useDispatch();
+  const handlerAddItem = (item)=>{
+    
+    //Dispatch an action
+    dispatch(addItems(item?.card?.info?.name)); 
+  }
+
+
   return (
     <div className="text-start text-sm gap-3">
 
@@ -27,7 +44,7 @@ const ItemList = ({ items }) => {
           </div>
 
           <div className="flex items-end">
-          <button className=" absolute z-10 bg-white shadow-lg rounded-md m-auto p-1 right-[302px] ">Add +</button>
+          <button className=" absolute z-10 bg-white shadow-lg rounded-md m-auto p-1 right-[302px]  "  onClick={()=>handlerAddItem(item)} >Add +</button>
           <img src={CDN_URL + item?.card?.info?.imageId} alt="Dish Image" className="w-20 rounded-md"/>
           
 

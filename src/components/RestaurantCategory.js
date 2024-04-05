@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
+import { FaArrowAltCircleDown,FaArrowAltCircleUp } from "react-icons/fa";
 
 const RestaurantCategory = ({ data  , showItems , setShowIndex}) => {
   //  console.log(data);
@@ -21,7 +22,7 @@ const RestaurantCategory = ({ data  , showItems , setShowIndex}) => {
 
       <div className="flex justify-between cursor-pointer " onClick={handleclick}>
       <span className=" text-2xl">{data?.title}</span>
-        <span>{showItems ? ["A"] : ["V"]}</span>
+        <span className=" text-4xl">{showItems ? <FaArrowAltCircleUp/> :<FaArrowAltCircleDown />}</span>
       </div>
 
      { showItems && <ItemList items={data?.categories[0].itemCards} />} 

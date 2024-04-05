@@ -40,3 +40,13 @@
 * -Contact 
 
 */
+
+
+
+
+#Redux Toolkit
+-Install @reduxjs/toolkit and  react-redux
+-Build our store
+-slice
+-dispatch(action)
+-selector
