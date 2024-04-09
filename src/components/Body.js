@@ -113,8 +113,8 @@ const Body = () => {
 
 
         {/* Username Change for checking the context API concept */}
-        <label>Username</label>
-        <input className="border border-black px-2 mx-2" value={loggedInUser} onChange={(event)=> setUsername(event.target.value)} />
+        {/* <label>Username</label>
+        <input className="border border-black px-2 mx-2" value={loggedInUser} onChange={(event)=> setUsername(event.target.value)} /> */}
       
 
 

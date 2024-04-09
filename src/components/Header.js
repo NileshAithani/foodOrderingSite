@@ -65,11 +65,7 @@ const Header = () => {
             Contact Us
           </Link>
         </li>
-        <li>
-          <Link to={"/grocery"} className="text-gray-700 hover:text-gray-950">
-            Grocery
-          </Link>
-        </li>
+
         <li className="text-gray-700 hover:text-gray-950">
           OnlineStatus : {onlineStatus ? "🟢" : "🔴"}
         </li>
